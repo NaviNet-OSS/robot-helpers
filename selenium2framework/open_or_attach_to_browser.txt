@@ -1,0 +1,30 @@
+*** Variables ***
+${BROWSER OPEN}  'CLOSED'
+ 
+*** Keywords ***
+ 
+Open Or Attach To Browser
+  Run Keyword If  ${BROWSER OPEN} == 'OPEN'  Switch Browzor  1
+  Run Keyword If  ${BROWSER OPEN} == 'CLOSED'  Open Browzor
+   
+Open Browzor
+  Open Browser  ${DTE_URL}  ${browser}
+  Set Global Variable  ${BROWSER OPEN}  'OPEN'
+ 
+Switch Browzor  
+  [Arguments]  ${id}
+  Switch Browser  ${id}
+ 
+Close Browzor
+  Close All Browsers
+  Set Global Variable  ${BROWSER OPEN}  'CLOSED'
+
+#USEAGE
+
+#*** Test Cases ***
+ 
+#Open Browser
+#  Open Or Attach To Browser
+ 
+#Obtain Existing Handle to Browser
+#  Open Or Attach To Browser
