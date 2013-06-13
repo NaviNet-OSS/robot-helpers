@@ -8,7 +8,7 @@ A set of keywords created to help with Robot Automation Framework
 
 ### Keyword: `Open Or Attach To Browser`
 
-Will attached to existing browser window, rather than creating a new one.
+Will attach to existing browser window, rather than creating a new one.
 
 Usage:
 
